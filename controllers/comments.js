@@ -15,7 +15,7 @@ export const createComment = async (req, res) => {
 				$push: { comments: newComment._id },
 			})
 		} catch (error) {
-			console.log(error)
+			res.json({ message: 'Error comment' })
 		}
 
 		res.json(newComment)

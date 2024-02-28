@@ -4,7 +4,6 @@ import Comment from '../models/Comment.js'
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-// Create Post
 export const createPost = async (req, res) => {
 	try {
 		const { title, text } = req.body
@@ -48,7 +47,6 @@ export const createPost = async (req, res) => {
 	}
 }
 
-// Get All Posts
 export const getAll = async (req, res) => {
 	try {
 		const posts = await Post.find().sort('-createdAt')
@@ -64,7 +62,6 @@ export const getAll = async (req, res) => {
 	}
 }
 
-// Get Post By Id
 export const getById = async (req, res) => {
 	try {
 		const post = await Post.findByIdAndUpdate(req.params.id, {
@@ -76,7 +73,6 @@ export const getById = async (req, res) => {
 	}
 }
 
-// Get All My Posts
 export const getMyPosts = async (req, res) => {
 	try {
 		const user = await User.findById(req.userId)
@@ -92,7 +88,6 @@ export const getMyPosts = async (req, res) => {
 	}
 }
 
-// Remove post
 export const removePost = async (req, res) => {
 	try {
 		const post = await Post.findByIdAndDelete(req.params.id)
@@ -108,7 +103,6 @@ export const removePost = async (req, res) => {
 	}
 }
 
-// Update post
 export const updatePost = async (req, res) => {
 	try {
 		const { title, text, id } = req.body
@@ -132,7 +126,6 @@ export const updatePost = async (req, res) => {
 	}
 }
 
-// Get Post Comments
 export const getPostComments = async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id)

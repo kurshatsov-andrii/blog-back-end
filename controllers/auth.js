@@ -2,7 +2,6 @@ import User from '../models/User.js'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
-// Register user
 export const register = async (req, res) => {
 	try {
 		const { username, password } = req.body
@@ -43,7 +42,6 @@ export const register = async (req, res) => {
 	}
 }
 
-// Login user
 export const login = async (req, res) => {
 	try {
 		const { username, password } = req.body
@@ -81,7 +79,6 @@ export const login = async (req, res) => {
 	}
 }
 
-// Get Me
 export const getMe = async (req, res) => {
 	try {
 		const user = await User.findById(req.userId)
