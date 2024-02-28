@@ -35,7 +35,7 @@ export const register = async (req, res) => {
 
 		res.json({
 			newUser,
-			// token,
+			token,
 			message: 'Registration completed successfully',
 		})
 	} catch (error) {
@@ -51,7 +51,7 @@ export const login = async (req, res) => {
 
 		if (!user) {
 			return res.json({
-				message: 'This user does not exist',
+				message: 'Incorrect login',
 			})
 		}
 
