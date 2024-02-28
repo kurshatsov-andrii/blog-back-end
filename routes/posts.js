@@ -6,6 +6,7 @@ import {
 	getMyPosts,
 	removePost,
 	updatePost,
+	getPostComments,
 } from '../controllers/posts.js'
 import { checkAuth } from '../utils/checkAuth.js'
 const router = new Router()
@@ -33,5 +34,9 @@ router.get('/user/me', checkAuth, getMyPosts)
 // Remove Post
 // http://localhost:3002/api/posts/:id
 router.delete('/:id', checkAuth, removePost)
+
+// Get Post Comments
+// http://localhost:3002/api/posts/comments/:id
+router.get('/comments/:id', getPostComments)
 
 export default router
